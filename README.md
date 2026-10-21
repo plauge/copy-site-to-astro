@@ -109,7 +109,11 @@ If something goes wrong, the agent gives you steps to roll back.
 
 ## Why one job per chat?
 
-Each job is small enough to finish within one agent context. The task file keeps status and a log, so a new chat always knows where to continue.
+The copy is split into several jobs instead of one big prompt. This keeps the number of tokens in each chat as low as possible.
+
+An AI agent gets worse as its context window fills up. It forgets earlier instructions, skips steps and makes more mistakes. A new chat for each job means the agent starts every job with a clean, small context and stays sharp.
+
+The task file keeps status and a log, so a new chat always knows where to continue.
 
 ## License
 
